@@ -63,7 +63,8 @@ resource "aws_iam_group_policy" "iam-admin-iam-group-access" {
                 "iam:GetGroupPolicy",
                 "iam:CreateGroupPolicy",
                 "iam:PutGroupPolicy",
-                "iam:UpdateGroup"
+                "iam:UpdateGroup",
+                "iam:ListGroupsForUser"
             ],
             "Resource": [
                 "*"
