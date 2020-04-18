@@ -1,21 +1,13 @@
-Install Python 
-https://docs.python-guide.org/starting/install3/linux/
-https://pip.pypa.io/en/latest/installing/
+## My Dev setup:
 
+Windows Pro 10
+WSL 2 + Docker Integration
+All Dev in WSL:Ubunutu environment
 
-Installation Problems for python3
-https://github.com/pypa/get-pip/issues/43
+Miniconda3 installed
+`python --version` = `Python 3.7.6`
+## Install
 
-`sudo apt-get install python3-distutils`
+AWS CLI
 
-`curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
-
-`python3 get-pip.py`
-
-https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html
-
-```
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
-```
+`pip install awscli`
