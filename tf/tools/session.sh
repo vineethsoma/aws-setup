@@ -8,5 +8,8 @@ docker run -ti \
 --rm \
 -v /run/host-services/ssh-auth.sock:/run/host-services/ssh-auth.sock \
 -e SSH_AUTH_SOCK="/run/host-services/ssh-auth.sock" \
--v pwd:/apps \
+-v $(pwd):/apps \
 tf12:latest bash
+
+
+# https://stackoverflow.com/questions/41485217/mount-current-directory-as-a-volume-in-docker-on-windows-10
