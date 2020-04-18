@@ -6,8 +6,8 @@ docker build $DIR -t tf12:latest
 
 docker run -ti \
 --rm \
--v /run/host-services/ssh-auth.sock:/run/host-services/ssh-auth.sock \
--e SSH_AUTH_SOCK="/run/host-services/ssh-auth.sock" \
+-v $HOME/.aws:/root/.aws \
+-v ${HOME}/.ssh:/root/.ssh \
 -v $(pwd):/apps \
 tf12:latest bash
 
