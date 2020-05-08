@@ -33,3 +33,32 @@ function (user, context, callback) {
 
 
 ```
+
+## Using AWS SSO service 
+- https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html
+- For this setup to work you need to manually provision the user with their emailAddress as username
+  - https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-manually.html
+  - Auth0 doesn't support SCIM currently - https://community.auth0.com/t/scim-compliance-auth0/11777
+    - So can't do auto provisioning of users - https://docs.aws.amazon.com/singlesignon/latest/userguide/provision-automatically.html
+- Issues
+  - Look at the CloudTrail log to troubleshoot AWS SAML errors, specifically `ExternalIdPDirectoryLogin` event. 
+- Here is the SAML setting that finally worked - 
+Application callback url: <SAML ACS Url>
+```json
+{
+  "audience": "https://us-east-1.signin.aws.amazon.com/platform/saml/<issuerId>",
+  "mappings": {
+    "email": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",
+    "name": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
+  },
+  "createUpnClaim": false,
+  "passthroughClaimsWithNoMapping": false,
+  "mapUnknownClaimsAsIs": false,
+  "mapIdentities": false,
+  "nameIdentifierFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress",
+  "nameIdentifierProbes": [
+    "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"
+  ]
+}
+
+```
