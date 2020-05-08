@@ -7,6 +7,8 @@
   - https://auth0.com/docs/connections/social/github?_ga=2.196752940.1815818864.1588900204-194080456.1588900204
 - AWS SSO with Auth0
   - https://auth0.com/docs/connections/social/github?_ga=2.196752940.1815818864.1588900204-194080456.1588900204
+- AWS SAML 
+  - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_assertions.html
 - Issues:
   - Under Github connection had to enable `email address`
   - In Rule parse `user.name` to not have any spaces
