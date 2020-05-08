@@ -62,3 +62,6 @@ Application callback url: <SAML ACS Url>
 }
 
 ```
+
+## Configure AWS CLI to use SSO
+https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.html
